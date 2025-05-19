@@ -1,0 +1,204 @@
+[
+  {
+    "type": "DHA",
+    "name": "DHA - Johannesburg Central",
+    "lat": -26.2046,
+    "lon": 28.0409
+  },
+  {
+    "type": "DHA",
+    "name": "DHA - Pretoria",
+    "lat": -25.7461,
+    "lon": 28.1881
+  },
+  
+  {
+    "type": "Bank",
+    "bank": "Absa",
+    "name": "Absa Centurion Lifestyle Centre",
+    "lat": -25.8595,
+    "lon": 28.1903
+  },
+  {
+    "type": "Bank",
+    "bank": "Absa",
+    "name": "Absa Key West Krugersdorp",
+    "lat": -26.1003,
+    "lon": 27.7666
+  },
+  {
+    "type": "Bank",
+    "bank": "Absa",
+    "name": "Absa Sandton City",
+    "lat": -26.1075,
+    "lon": 28.0568
+  },
+  {
+    "type": "Bank",
+    "bank": "Absa",
+    "name": "Absa Port Elizabeth (Greenacres)",
+    "lat": -33.9608,
+    "lon": 25.6022
+  },
+  {
+    "type": "Bank",
+    "bank": "FNB",
+    "name": "FNB Centurion Lifestyle Centre",
+    "lat": -25.8595,
+    "lon": 28.1903
+  },
+  {
+    "type": "Bank",
+    "bank": "FNB",
+    "name": "FNB Glen Shopping Centre",
+    "lat": -26.2708,
+    "lon": 28.0048
+  },
+  {
+    "type": "Bank",
+    "bank": "FNB",
+    "name": "FNB Lynnwood (The Grove Mall)",
+    "lat": -25.7677,
+    "lon": 28.3215
+  },
+  {
+    "type": "Bank",
+    "bank": "FNB",
+    "name": "FNB Merchant Place Sandton",
+    "lat": -26.1073,
+    "lon": 28.0565
+  },
+  {
+    "type": "Bank",
+    "bank": "FNB",
+    "name": "FNB Greenpoint",
+    "lat": -33.9060,
+    "lon": 18.4115
+  },
+  {
+    "type": "Bank",
+    "bank": "FNB",
+    "name": "FNB Cornubia (Durban)",
+    "lat": -29.7066,
+    "lon": 31.0686
+  },
+  {
+    "type": "Bank",
+    "bank": "FNB",
+    "name": "FNB Burgersfort",
+    "lat": -24.6781,
+    "lon": 30.3324
+  },
+  {
+    "type": "Bank",
+    "bank": "Nedbank",
+    "name": "Nedbank Arcadia (Pretoria)",
+    "lat": -25.7459,
+    "lon": 28.2066
+  },
+  {
+    "type": "Bank",
+    "bank": "Nedbank",
+    "name": "Nedbank Constantia Kloof (Roodepoort)",
+    "lat": -26.1510,
+    "lon": 27.9189
+  },
+  {
+    "type": "Bank",
+    "bank": "Nedbank",
+    "name": "Nedbank Rivonia (Sandton)",
+    "lat": -26.0548,
+    "lon": 28.0567
+  },
+  {
+    "type": "Bank",
+    "bank": "Nedbank",
+    "name": "Nedbank St George’s Mall (Cape Town)",
+    "lat": -33.9198,
+    "lon": 18.4232
+  },
+  {
+    "type": "Bank",
+    "bank": "Nedbank",
+    "name": "Nedbank Nelspruit (Temporarily Closed)",
+    "lat": -25.4658,
+    "lon": 30.9850
+  },
+  {
+    "type": "Bank",
+    "bank": "Standard Bank",
+    "name": "Standard Bank Centurion Lifestyle Centre",
+    "lat": -25.8595,
+    "lon": 28.1903
+  },
+  {
+    "type": "Bank",
+    "bank": "Standard Bank",
+    "name": "Standard Bank Killarney Mall (Johannesburg)",
+    "lat": -26.1541,
+    "lon": 28.0436
+  },
+  {
+    "type": "Bank",
+    "bank": "Standard Bank",
+    "name": "Standard Bank Jubilee Mall (Hammanskraal)",
+    "lat": -25.4069,
+    "lon": 28.2884
+  },
+  {
+    "type": "Bank",
+    "bank": "Standard Bank",
+    "name": "Standard Bank Simmonds Street (Johannesburg)",
+    "lat": -26.2041,
+    "lon": 28.0406
+  },
+  {
+    "type": "Bank",
+    "bank": "Standard Bank",
+    "name": "Standard Bank Canal Walk (Cape Town)",
+    "lat": -33.8922,
+    "lon": 18.5116
+  },
+  {
+    "type": "Bank",
+    "bank": "Standard Bank",
+    "name": "Standard Bank Promenade Mall (Mitchells Plain)",
+    "lat": -34.0497,
+    "lon": 18.6206
+  },
+  {
+    "type": "Bank",
+    "bank": "Standard Bank",
+    "name": "Standard Bank Newton Park (Port Elizabeth)",
+    "lat": -33.9608,
+    "lon": 25.6022
+  },
+  {
+    "type": "Bank",
+    "bank": "Standard Bank",
+    "name": "Standard Bank Kingsmead (Durban)",
+    "lat": -29.8579,
+    "lon": 31.0218
+  },
+  {
+    "type": "Bank",
+    "bank": "Standard Bank",
+    "name": "Standard Bank Kathu Mall (Northern Cape)",
+    "lat": -27.7045,
+    "lon": 23.0489
+  },
+  {
+    "type": "Bank",
+    "bank": "Discovery Bank",
+    "name": "Discovery Bank Head Office (Sandton)",
+    "lat": -26.1071,
+    "lon": 28.0555
+  },
+  {
+    "type": "Bank",
+    "bank": "Investec",
+    "name": "Investec Bank Sandown (Sandton)",
+    "lat": -26.1073,
+    "lon": 28.0565
+  }
+]

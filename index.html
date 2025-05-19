@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Nearest DHA & Banks in South Africa</title>
+  <title>Find Nearest DHA or Bank</title>
   <style>
-    /* Reset and base */
     body, html {
       margin: 0;
       padding: 0;
@@ -24,9 +23,9 @@
       border-radius: 0 0 40px 40px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.25);
       padding: 40px 30px 60px 30px;
+      text-align: center;
       position: relative;
       z-index: 1;
-      text-align: center;
     }
 
     h1 {
@@ -34,10 +33,9 @@
       margin-bottom: 25px;
       color: #222;
       font-weight: 700;
-      letter-spacing: 1px;
     }
 
-    button#findLocationBtn {
+    button {
       background: linear-gradient(135deg, #005C97, #363795);
       border: none;
       padding: 14px 30px;
@@ -47,14 +45,8 @@
       cursor: pointer;
       width: 100%;
       font-weight: 600;
-      transition: background 0.3s ease;
       box-shadow: 0 6px 12px rgba(54, 55, 149, 0.6);
       margin-bottom: 30px;
-    }
-
-    button#findLocationBtn:hover {
-      background: linear-gradient(135deg, #363795, #005C97);
-      box-shadow: 0 8px 20px rgba(54, 55, 149, 0.9);
     }
 
     #locations {
@@ -63,162 +55,32 @@
       text-align: left;
     }
 
-    #locations h2 {
-      margin-bottom: 18px;
-      color: #222;
-      font-weight: 700;
-    }
-
     .location {
       background-color: #f0f0f0;
       padding: 14px 18px;
       border-radius: 18px;
       margin-bottom: 14px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      color: #333;
-    }
-
-    .location strong {
-      font-weight: 700;
-      color: #222;
     }
 
     .location a {
       color: #005C97;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
     }
 
     .location a:hover {
       color: #363795;
       text-decoration: underline;
     }
-
-    /* South African coat of arms on the right */
-    body::after {
-      content: "";
-      position: fixed;
-      top: 50%;
-      right: 40px;
-      transform: translateY(-50%);
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Coat_of_Arms_of_South_Africa.svg/512px-Coat_of_Arms_of_South_Africa.svg.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 120px;
-      height: 120px;
-      opacity: 0.15;
-      border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
-      z-index: 0;
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Find Nearest DHA or Bank (South Africa)</h1>
-    <button id="findLocationBtn" onclick="getLocation()">Find Nearest Locations</button>
-    <div id="locations"></div>
+    <h1>Find Nearest DHA or Bank</h1>
+    <button onclick="loadAndFindLocations()">Find Nearest Locations</button>
+    <div id="locations">Click the button to get started.</div>
   </div>
-
-  <script>
-    const locations = [
-      // DHA Offices
-      { name: "DHA - Johannesburg Central", lat: -26.2046, lon: 28.0409 },
-      { name: "DHA - Pretoria", lat: -25.7461, lon: 28.1881 },
-      { name: "DHA - Durban", lat: -29.8587, lon: 31.0218 },
-      { name: "DHA - Cape Town", lat: -33.9180, lon: 18.4233 },
-      { name: "DHA - Bloemfontein", lat: -29.1183, lon: 26.2296 },
-      { name: "DHA - Polokwane", lat: -23.9045, lon: 29.4689 },
-      { name: "DHA - Kimberley", lat: -28.7383, lon: 24.7636 },
-      { name: "DHA - Nelspruit", lat: -25.4658, lon: 30.9850 },
-      { name: "DHA - East London", lat: -33.0153, lon: 27.9116 },
-      { name: "DHA - Port Elizabeth", lat: -33.9608, lon: 25.6022 },
-
-      // Bank Branches
-      { name: "FNB - Bank City (JHB)", lat: -26.2044, lon: 28.0456 },
-      { name: "Standard Bank - Rosebank", lat: -26.1444, lon: 28.0367 },
-      { name: "ABSA Bank - Main Johannesburg", lat: -26.2041, lon: 28.0488 },
-      { name: "Nedbank - Sandton", lat: -26.1075, lon: 28.0568 },
-      { name: "Capitec - Stellenbosch HQ", lat: -33.9346, lon: 18.8610 },
-      { name: "Investec Bank - Sandton", lat: -26.1073, lon: 28.0565 },
-      { name: "African Bank - Midrand HQ", lat: -26.0051, lon: 28.1319 },
-      { name: "TymeBank - Rosebank", lat: -26.1456, lon: 28.0367 },
-      { name: "Discovery Bank - Sandton", lat: -26.1071, lon: 28.0555 },
-      { name: "Bidvest Bank - Melrose Arch", lat: -26.1348, lon: 28.0683 }
-    ];
-
-    function getDistance(lat1, lon1, lat2, lon2) {
-      const R = 6371; // Earth radius in km
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLon = (lon2 - lon1) * Math.PI / 180;
-      const a =
-        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(lat1 * Math.PI / 180) *
-        Math.cos(lat2 * Math.PI / 180) *
-        Math.sin(dLon / 2) * Math.sin(dLon / 2);
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-      return R * c;
-    }
-
-    function getLocation() {
-      const container = document.getElementById("locations");
-      container.innerHTML = "⏳ Getting your location...";
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          showNearestLocations,
-          showError,
-          { enableHighAccuracy: true, timeout: 10000 }
-        );
-      } else {
-        container.innerHTML = "❌ Geolocation is not supported by this browser.";
-      }
-    }
-
-    function showNearestLocations(position) {
-      const userLat = position.coords.latitude;
-      const userLon = position.coords.longitude;
-
-      const locationsWithDistance = locations.map(loc => {
-        const distance = getDistance(userLat, userLon, loc.lat, loc.lon);
-        return { ...loc, distance };
-      });
-
-      locationsWithDistance.sort((a, b) => a.distance - b.distance);
-
-      const container = document.getElementById("locations");
-      container.innerHTML = "<h2>Nearest Locations:</h2>";
-
-      locationsWithDistance.slice(0, 5).forEach(loc => {
-        const div = document.createElement("div");
-        div.classList.add("location");
-        div.innerHTML = `
-          <strong>${loc.name}</strong> — ${loc.distance.toFixed(2)} km away — 
-          <a href="https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lon}" target="_blank">View on Map</a>
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    function showError(error) {
-      let msg = "";
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          msg = "❌ User denied the request for Geolocation.";
-          break;
-        case error.POSITION_UNAVAILABLE:
-          msg = "❌ Location information is unavailable.";
-          break;
-        case error.TIMEOUT:
-          msg = "❌ The request to get user location timed out.";
-          break;
-        default:
-          msg = "❌ An unknown error occurred.";
-          break;
-      }
-      document.getElementById("locations").innerHTML = msg;
-    }
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
